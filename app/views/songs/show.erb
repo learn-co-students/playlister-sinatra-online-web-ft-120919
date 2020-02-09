@@ -11,6 +11,10 @@
     <a href=<%="/genres/#{genre.slug}"%>><%= genre.name %></a>
 <% end %>
 <br>
-<p>Successfully created song.</p>
-<p>Successfully updated song.</p>
+
+<% if flash.has?(:message) %>
+   <%= flash[:message] %>
+<% end %>
+
+
 </body>
