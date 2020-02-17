@@ -6,7 +6,7 @@
   <input id="hidden" type="hidden" name="_method" value="PATCH">
     
 <% Genre.all.each do |genre| %>
-  <input id="<%= genre.name %>" type="checkbox" name="genres[]" value="<%= genre.id %>"> <%='checked' if @song.genres.include?(genre) %><%= genre.name %><br>
+  <input id="<%= genre.name %>" type="checkbox" name="genres[]" value="<%= genre.id %>"<%='checked' if @song.genres.include?(genre) %>><%= genre.name %><br>
 <% end %>
 
 <label for="artist_name">Artist Name </label>
