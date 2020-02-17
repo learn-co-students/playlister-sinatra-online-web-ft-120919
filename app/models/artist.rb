@@ -4,9 +4,11 @@ class Artist < ActiveRecord::Base
 
     def slug
         self.name.downcase.gsub(/\s+/, '-')
+        # str = self.username.split(" ")
+        # str.map{|word| word.downcase}.join("-")
     end
 
     def self.find_by_slug(slug)
-        self.find_by(name: slug.split("-").collect {|string| string.capitalize}.join(", ").tr(',', ''))
+        self.all.find{ |user_slug| user_slug.slug == slug }
     end
 end
